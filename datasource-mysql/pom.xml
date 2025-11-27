@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.yitu</groupId>
+        <artifactId>db-quick-connect</artifactId>
+        <version>1.0.2</version>
+    </parent>
+
+    <artifactId>datasource-mysql</artifactId>
+    <packaging>jar</packaging>
+
+    <name>datasource-mysql</name>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.yitu</groupId>
+                <artifactId>datasource-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.yitu</groupId>
+            <artifactId>datasource-core</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+    </dependencies>
+
+</project>
