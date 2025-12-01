@@ -15,6 +15,9 @@ import static java.util.stream.Collectors.toMap;
  */
 @Getter
 public enum DbType {
+    /**
+     * mysql
+     */
     MYSQL(0, "mysql", "mysql"),
     POSTGRESQL(1, "postgresql", "postgresql"),
     HIVE(2, "hive", "hive"),
