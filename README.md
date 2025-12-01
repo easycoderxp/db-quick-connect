@@ -82,8 +82,7 @@ info("get ad hoc connection");
 使用默认池配置（minIdle=5, maxPoolSize=10, timeout=10s）：
 
 ```java
-try(Connection connection = DataSourceClientProvider
-        .getPooledConnection(DbType.MYSQL, param)){
+try(Connection connection = DataSourceClientProvider.getPooledConnection(DbType.MYSQL, param)){
         log.
 
 info("get pooled connection");
@@ -103,6 +102,7 @@ setMaxPoolSize(4);
 poolConfig.
 
 setConnectionTimeoutMs(5000);
+
 try(
 Connection connection = DataSourceClientProvider
         .getPooledConnection(DbType.MYSQL, param, poolConfig)){
