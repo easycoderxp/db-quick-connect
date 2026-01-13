@@ -40,23 +40,23 @@
 
         <!-- MySQL 支持 -->
 <dependency>
-<groupId>com.yitu</groupId>
-<artifactId>datasource-mysql</artifactId>
-<version>1.0.2</version>
+    <groupId>com.yitu</groupId>
+    <artifactId>datasource-mysql</artifactId>
+    <version>1.0.2</version>
 </dependency>
 
         <!-- 达梦数据库支持 -->
 <dependency>
-<groupId>com.yitu</groupId>
-<artifactId>datasource-dameng</artifactId>
-<version>1.0.2</version>
+    <groupId>com.yitu</groupId>
+    <artifactId>datasource-dameng</artifactId>
+    <version>1.0.2</version>
 </dependency>
 
         <!-- 金仓数据库支持 -->
 <dependency>
-<groupId>com.yitu</groupId>
-<artifactId>datasource-kingbase</artifactId>
-<version>1.0.2</version>
+    <groupId>com.yitu</groupId>
+    <artifactId>datasource-kingbase</artifactId>
+    <version>1.0.2</version>
 </dependency>
 ```
 
@@ -72,9 +72,7 @@
 ```java
 try(Connection connection = DataSourceClientProvider
         .getAdHocConnection(DbType.MYSQL, param)){
-        log.
-
-info("get ad hoc connection");
+        log.info("get ad hoc connection");
 }
 ```
 
@@ -85,9 +83,7 @@ info("get ad hoc connection");
 ```java
 try(Connection connection = DataSourceClientProvider
         .getPooledConnection(DbType.MYSQL, param)){
-        log.
-
-info("get pooled connection");
+        log.info("get pooled connection");
 }
 ```
 
@@ -95,22 +91,14 @@ info("get pooled connection");
 
 ```java
 PoolConfig poolConfig = new PoolConfig();
-poolConfig.
-
-setMinIdle(2);
-poolConfig.
-
-setMaxPoolSize(4);
-poolConfig.
-
-setConnectionTimeoutMs(5000);
+poolConfig.setMinIdle(2);
+poolConfig.setMaxPoolSize(4);
+poolConfig.setConnectionTimeoutMs(5000);
 
 try(
 Connection connection = DataSourceClientProvider
         .getPooledConnection(DbType.MYSQL, param, poolConfig)){
-        log.
-
-info("get pooled connection");
+        log.info("get pooled connection");
 }
 ```
 
