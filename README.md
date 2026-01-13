@@ -70,7 +70,8 @@
 适用于一次性操作，不使用连接池：
 
 ```java
-try(Connection connection = DataSourceClientProvider.getAdHocConnection(DbType.MYSQL, param)){
+try(Connection connection = DataSourceClientProvider
+        .getAdHocConnection(DbType.MYSQL, param)){
         log.
 
 info("get ad hoc connection");
@@ -82,7 +83,8 @@ info("get ad hoc connection");
 使用默认池配置（minIdle=5, maxPoolSize=10, timeout=10s）：
 
 ```java
-try(Connection connection = DataSourceClientProvider.getPooledConnection(DbType.MYSQL, param)){
+try(Connection connection = DataSourceClientProvider
+        .getPooledConnection(DbType.MYSQL, param)){
         log.
 
 info("get pooled connection");
@@ -115,11 +117,11 @@ info("get pooled connection");
 ### 3. 测试连通性
 
 ```java
-DataSourceClientProvider.testConnection(DbType.MYSQL, param)
+DataSourceClientProvider.testConnection(DbType.MYSQL, param);
 ```
 
 ### 4. 获取连接池监控指标
 
 ```java
-DataSourceClientProvider.getMetrics(DbType.MYSQL, param)
+DataSourceClientProvider.getMetrics(DbType.MYSQL, param);
 ```
